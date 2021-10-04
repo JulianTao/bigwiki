@@ -1,0 +1,18 @@
+---
+title: "Workflow for the BiG group"
+---
+
+:::{.callout-note}
+This is a work in progress. Suggestions and contributions are welcome! Please open an issue if you have questions, open a PR if you think your branch is ready to be merged.
+:::
+
+
+[Git basics](./git.qmd)
+
+[Rmarkdown Templates](https://github.com/JulianTao/bigrmd)
+
+[Using Agave](./agave.qmd)
+
+[Using rclone and shared google drive](./rclone-gd.qmd)
+
+

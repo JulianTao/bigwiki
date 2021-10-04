@@ -1,0 +1,19 @@
+project:
+  type: site
+  output-dir: docs
+
+site:
+  title: "BiG Workflow"
+  navbar:
+    type: dark
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
