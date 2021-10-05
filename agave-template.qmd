@@ -1,4 +1,6 @@
-
+---
+title: Using Agave
+---
 ## A template ChronoGPU project to run on Agave
 
 **GitHub repo**: [chgpu_agave_template](https://github.com/JulianTao/chgpu_agave_template.git)

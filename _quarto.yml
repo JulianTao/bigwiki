@@ -6,7 +6,7 @@ site:
   title: "BiG Workflow"
   navbar:
     type: dark
-    background: primary
+    background: gold
     left:
       - href: index.qmd
         text: Home
@@ -14,9 +14,19 @@ site:
     right:
       - icon: github
         href: https://github.com/JulianTao/bigworkflow
-
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - git.qmd
+      - gd.qmd
+      - documentation.qmd
+      - knowledge.qmd
+      - lab.qmd
+      - agave-template.qmd
 format:
   html:
     theme: cosmo
+    linkcolor: maroon
     css: styles.css
     toc: true
