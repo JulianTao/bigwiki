@@ -58,7 +58,7 @@
   {
     "objectID": "gd.html#google-drive",
     "href": "gd.html#google-drive",
-    "title": "Data Archiving using Google Drive",
+    "title": "Data Archiving",
     "section": "Google Drive",
     "text": "ASU provides unlimited google drive storage to all the students and faculty members.\nWe can leverage this opportunity to archive our group research data.\n\n\n\n\n\n\nSource vs Data\n\n\n\nFor source files, we use git mainly for version control purposes. Also, the source files are usually small in size, and github is sufficient for storage.\nFor data files, we use googledrive for archiving purposes. Also, the data files are usually large in size, and googledrive is perfect for this.\n\n\n\nGeneral principles\n\nFor each project, create a subfolder in the shared google drive.\nThe subfolder should have a concise but indicative name, for example, jtao-rotation1\nCreate sub-subfolders as necessary\nInclude a README file to briefly introduce the background of the data and the structure of the data; also in the README file, include a link to the git repo of the source files.\n…\n\n\n\nFor use with the cluster\n\nFollow the instructions from Research Computing to configure your rclone on agave and link rclone to the group shared google drive.\nInclude a line of rclone copy command in the batch file (as shown in the template), and follow the instructions to automate the archiving process immediately after your simulation is completed.\nIf you prefer to use GUI, you can use Globus.\n\n\n\nFor use outside of the cluster\n\nArchive early, archive often.\nFollow the general principles."
   },
@@ -93,14 +93,14 @@
   {
     "objectID": "documentation.html#rmarkdown",
     "href": "documentation.html#rmarkdown",
-    "title": "Documentation and Reporting",
+    "title": "Documentation",
     "section": "Rmarkdown",
     "text": "Rmarkdown Cookbook\nBiG Rmarkdown Templates"
   },
   {
     "objectID": "documentation.html#quarto",
     "href": "documentation.html#quarto",
-    "title": "Documentation and Reporting",
+    "title": "Documentation",
     "section": "Quarto",
     "text": "Quarto Documentation"
   }

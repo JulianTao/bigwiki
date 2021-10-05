@@ -1,5 +1,5 @@
 ---
-title: "Data Archiving using Google Drive"
+title: "Data Archiving"
 ---
 
 ## Google Drive

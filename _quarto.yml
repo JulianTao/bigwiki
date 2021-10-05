@@ -28,5 +28,6 @@ format:
   html:
     theme: cosmo
     linkcolor: maroon
+    highlight-style: github
     css: styles.css
     toc: true
