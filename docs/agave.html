@@ -285,7 +285,6 @@ Note
 <li>Congratulations, you run your first ChronoGPU project on Agave.</li>
 </ol>
 
-
 </section>
 </section>
 <script type="application/javascript">
@@ -331,9 +330,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#/, "");
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });

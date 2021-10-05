@@ -75,7 +75,6 @@
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-8 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 
-
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
@@ -119,9 +118,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#/, "");
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });

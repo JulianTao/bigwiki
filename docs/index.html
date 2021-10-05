@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-99.9.9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>BiG Workflow - Workflow for the BiG group</title>
+  <title>BiG Workflow – Workflow for the BiG group</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -91,10 +91,9 @@ Note
 </div>
 </div>
 <p><a href="./git.html">Git basics</a></p>
-<p><a href="https://github.com/JulianTao/bigrmd">Rmarkdown Templates</a></p>
 <p><a href="./agave.html">Using Agave</a></p>
 <p><a href="./rclone-gd.html">Using rclone and shared google drive</a></p>
-
+<p><a href="https://github.com/JulianTao/bigrmd">Rmarkdown Templates</a></p>
 
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -139,9 +138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#/, "");
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
