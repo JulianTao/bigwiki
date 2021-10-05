@@ -1,0 +1,38 @@
+---
+title: "Data Archiving using Google Drive"
+---
+
+## Google Drive
+
+ASU provides unlimited google drive storage to all the students and faculty members. 
+
+We can leverage this opportunity to archive our group research data.
+
+:::{.callout-tip}
+## Source vs Data
+
+For source files, we use `git` mainly for version control purposes. Also, the source files are usually small in size, and `github` is sufficient for storage. 
+
+For data files, we use `googledrive` for archiving purposes. Also, the data files are usually large in size, and `googledrive` is perfect for this.
+
+:::
+
+### General principles
+
+1. For each project, create a subfolder in the shared google drive.
+2. The subfolder should have a concise but indicative name, for example, jtao-rotation1
+3. Create sub-subfolders as necessary
+4. Include a README file to briefly introduce the background of the data and the structure of the data; also in the README file, include a link to the git repo of the source files.
+5. ...
+
+### For use with the cluster
+
+1. Follow the [instructions from Research Computing](https://asurc.atlassian.net/wiki/spaces/RC/pages/61833262/Google+Drive+rclone) to configure your `rclone` on agave and link `rclone` to the group shared google drive.
+2. Include a line of `rclone copy command` in the batch file (as shown in the [template](./agave-template.qmd)), and follow the instructions to automate the archiving process immediately after your simulation is completed.
+3. If you prefer to use GUI, you can use [Globus](https://asurc.atlassian.net/wiki/spaces/RC/pages/201490433/Google+Drive+Globus).  
+
+
+### For use outside of the cluster
+
+1. Archive early, archive often.
+2. Follow the general principles.

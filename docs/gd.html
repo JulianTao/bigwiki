@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-99.9.9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>BiG Workflow – Workflow for the BiG group</title>
+  <title>BiG Workflow – Data Archiving using Google Drive</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -56,7 +56,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+    <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html">About</a>
@@ -71,38 +71,68 @@
  <!-- /navbar/sidebar -->
 <div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
-  <div id="quarto-toc-sidebar" class=" pt-0 col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"></div>
+  <div id="quarto-toc-sidebar" class=" pt-0 col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#google-drive" class="nav-link active" data-scroll-target="#google-drive">Google Drive</a>
+<ul class="collapse">
+<li><a href="#general-principles" class="nav-link" data-scroll-target="#general-principles">General principles</a></li>
+<li><a href="#for-use-with-the-cluster" class="nav-link" data-scroll-target="#for-use-with-the-cluster">For use with the cluster</a></li>
+<li><a href="#for-use-outside-of-the-cluster" class="nav-link" data-scroll-target="#for-use-outside-of-the-cluster">For use outside of the cluster</a></li>
+</ul></li>
+</ul>
+</nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-8 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title display-7">Workflow for the BiG group</h1>
+<h1 class="title display-7">Data Archiving using Google Drive</h1>
 </header>
-<div class="callout-note callout callout-style-default callout-captioned">
+
+<section id="google-drive" class="level2">
+<h2 class="anchored" data-anchor-id="google-drive">Google Drive</h2>
+<p>ASU provides unlimited google drive storage to all the students and faculty members.</p>
+<p>We can leverage this opportunity to archive our group research data.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Source vs Data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a work in progress. Suggestions and contributions are welcome! Please open an issue if you have questions, open a PR if you think your branch is ready to be merged.</p>
+<p>For source files, we use <code>git</code> mainly for version control purposes. Also, the source files are usually small in size, and <code>github</code> is sufficient for storage.</p>
+<p>For data files, we use <code>googledrive</code> for archiving purposes. Also, the data files are usually large in size, and <code>googledrive</code> is perfect for this.</p>
 </div>
 </div>
-<ul>
-<li><p><a href="./git.html">Source Version Control</a></p></li>
-<li><p><a href="./gd.html">Data Archiving</a></p></li>
-<li><p><a href="./documentation.html">Documentation</a></p></li>
-<li><p><a href="./knowledge.html">Knowledge Mangement</a></p></li>
-<li><p><a href="./lab.html">Lab Management</a></p></li>
-<li><p>Using Agave</p>
-<ul>
-<li><a href="https://asurc.atlassian.net/wiki/spaces/RC/pages/46268520/Documentation">RC documentation</a></li>
-<li><a href="./agave-template.html">Using Template Project</a></li>
-</ul></li>
-</ul>
+<section id="general-principles" class="level3">
+<h3 class="anchored" data-anchor-id="general-principles">General principles</h3>
+<ol type="1">
+<li>For each project, create a subfolder in the shared google drive.</li>
+<li>The subfolder should have a concise but indicative name, for example, jtao-rotation1</li>
+<li>Create sub-subfolders as necessary</li>
+<li>Include a README file to briefly introduce the background of the data and the structure of the data; also in the README file, include a link to the git repo of the source files.</li>
+<li>…</li>
+</ol>
+</section>
+<section id="for-use-with-the-cluster" class="level3">
+<h3 class="anchored" data-anchor-id="for-use-with-the-cluster">For use with the cluster</h3>
+<ol type="1">
+<li>Follow the <a href="https://asurc.atlassian.net/wiki/spaces/RC/pages/61833262/Google+Drive+rclone">instructions from Research Computing</a> to configure your <code>rclone</code> on agave and link <code>rclone</code> to the group shared google drive.</li>
+<li>Include a line of <code>rclone copy command</code> in the batch file (as shown in the <a href="./agave-template.html">template</a>), and follow the instructions to automate the archiving process immediately after your simulation is completed.</li>
+<li>If you prefer to use GUI, you can use <a href="https://asurc.atlassian.net/wiki/spaces/RC/pages/201490433/Google+Drive+Globus">Globus</a>.</li>
+</ol>
+</section>
+<section id="for-use-outside-of-the-cluster" class="level3">
+<h3 class="anchored" data-anchor-id="for-use-outside-of-the-cluster">For use outside of the cluster</h3>
+<ol type="1">
+<li>Archive early, archive often.</li>
+<li>Follow the general principles.</li>
+</ol>
 
+</section>
+</section>
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

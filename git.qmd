@@ -1,5 +1,5 @@
 ---
-title: "Git Basics"
+title: "Version control using Git and GitHub: the basics"
 bibliography: Workflow.bib
 nocite: |
   @Atl; @Atl, @zotero-2955, @zotero-2951, @zotero-2954, @zotero-2952  
@@ -8,6 +8,10 @@ nocite: |
 Git is a distributed version control system. With Git, every developer has the full history of the code repo locally. Github is an Internet host for git repos. Similar hosts include Gitlab, Bitbucket, Gitbucket; and there are many more.
 
 As we transition to fully open-source programming, with the source mainly consisting of text files, git and github becomes critically important. 
+
+We suggest that all the source files should be tracked using `git` and collaborated via `github`. 
+
+Before publication, a `git repo` can be set as `private`.
 
 
 ## Manage local repo

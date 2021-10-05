@@ -1,0 +1,22 @@
+---
+title: Documentation and Reporting
+---
+
+:::{.callout-warning}
+## WIP
+This is a work in progress. The templates will be updated and more information will be provide.
+:::
+
+The goal is to conduct reproducible research, to report and document data and results in a reproducible manner.
+
+We suggest to use Rmarkdown and/or Quarto.
+
+## Rmarkdown 
+
+* [Rmarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+* [BiG Rmarkdown Templates](https://github.com/JulianTao/bigrmd)
+
+## Quarto
+
+* [Quarto Documentation](https://quarto.org/)
+

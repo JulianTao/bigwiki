@@ -7,11 +7,18 @@ This is a work in progress. Suggestions and contributions are welcome! Please op
 :::
 
 
-[Git basics](./git.qmd)
+* [Source Version Control](./git.qmd)
 
-[Using Agave](./agave.qmd)
+* [Data Archiving](./gd.qmd)
 
-[Using rclone and shared google drive](./rclone-gd.qmd)
+* [Documentation](./documentation.qmd)
 
-[Rmarkdown Templates](https://github.com/JulianTao/bigrmd)
+* [Knowledge Mangement](./knowledge.qmd)
+
+* [Lab Management](./lab.qmd)
+* Using Agave
+
+  + [RC documentation](https://asurc.atlassian.net/wiki/spaces/RC/pages/46268520/Documentation)
+  + [Using Template Project](./agave-template.qmd)
+
 
