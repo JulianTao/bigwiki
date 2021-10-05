@@ -9,10 +9,9 @@ This is a work in progress. Suggestions and contributions are welcome! Please op
 
 [Git basics](./git.qmd)
 
-[Rmarkdown Templates](https://github.com/JulianTao/bigrmd)
-
 [Using Agave](./agave.qmd)
 
 [Using rclone and shared google drive](./rclone-gd.qmd)
 
+[Rmarkdown Templates](https://github.com/JulianTao/bigrmd)
 

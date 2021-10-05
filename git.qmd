@@ -1,1 +1,103 @@
 # Git Basics
+
+Git is a distributed version control system. With Git, every developer has the full history of the code repo locally. Github is an Internet host for git repos. Similar hosts include Gitlab, Bitbucket, Gitbucket; and there are many more.
+
+As we transition to fully open-source programming, with the source mainly consisting of text files, git and github becomes critically important. 
+
+
+## Manage local repo
+
+1. Initiate
+
+```bash
+cd /somedir   # navigate to the directory that you want to create the repo
+git init      # Initiate the git repo
+```
+This creates a new subdirectory named .git that contains all of your necessary repository files — a Git repository skeleton.
+
+2. Starting tracking files or Staging modified files
+
+```bash
+git add somefile  # start tracking some files
+
+# or
+
+git add --all     # start tracking all files in the directory
+```
+
+
+3. Commit
+
+```bash
+git commit -m "Initial commit"      # commit the changes with a message
+
+# or
+
+git commit -a -m "Initial commit"   # auto commit skipping the staging area 
+```
+
+:::{.callout-tip}
+Always include a message when committing. A suggested format is "verb" + "subject"
+:::
+
+4. Ignore
+
+```bash
+cat .gitignore
+*.err       # ignore all the logs on errors
+build/      # ignore the build directory
+```
+
+You can edit the `.gitignore` file at anytime. 
+
+5. Status and History
+
+You can check the git status using,
+
+```bash
+git status      # Shows you the current git status 
+git log         # Shows you the git history
+```
+
+6. Removing files
+
+```bash
+git rm Makefile
+```
+This removes the `Makefile` from Git but not from the directory.
+
+7. Undo
+
+```bash
+git commit --amend              # amend the current change to the previous commit
+git restore --staged README.md  # unstage a staged file
+git restore READE.md            # discard changes in working directory. 
+```
+
+## Manage remote repo
+
+1. Create
+
+2. 
+
+
+## Link local and remote repo
+
+1. Configure your local git
+
+2. Create a repo from github
+
+3. Create a repo from local repo
+
+2. Clone
+
+3. Pull
+
+4. Push
+
+## Collaborate using Github
+
+
+1. Branching
+
+2. 
