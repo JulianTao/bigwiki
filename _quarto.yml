@@ -11,6 +11,9 @@ site:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - icon: github
+        href: https://github.com/JulianTao/bigworkflow
 
 format:
   html:
