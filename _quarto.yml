@@ -1,8 +1,8 @@
 project:
-  type: site
+  type: website
   output-dir: docs
 
-site:
+website:
   title: "BiG Workflow"
   navbar:
     type: dark

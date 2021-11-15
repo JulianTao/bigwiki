@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workflow for the BiG group",
+    "section": "",
+    "text": "Note\n\n\n\nThis is a work in progress. Suggestions and contributions are welcome! Please open an issue if you have questions, open a PR if you think your branch is ready to be merged.\n\n\n\nSource Version Control\nData Archiving\nDocumentation\nKnowledge Mangement\nLab Management\nUsing Agave\n\nRC documentation\nUsing Template Project"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -42,6 +49,20 @@
     "text": "Atlassian. n.d. “Learn Git- Git Tutorials, Workflows and Commands | Atlassian Git Tutorial.” Atlassian. https://www.atlassian.com/git.\n\n\n“Git - Book.” n.d. https://git-scm.com/book/en/v2.\n\n\n“Git - the Simple Guide - No Deep Shit!” n.d. https://rogerdudler.github.io/git-guide/.\n\n\n“Git Handbook \\(\\cdot\\) GitHub Guides.” n.d. https://guides.github.com/introduction/git-handbook/.\n\n\n“Learn Git with Bitbucket Cloud | Atlassian Git Tutorial.” n.d. https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud."
   },
   {
+    "objectID": "gd.html#google-drive",
+    "href": "gd.html#google-drive",
+    "title": "Data Archiving",
+    "section": "Google Drive",
+    "text": "ASU provides unlimited google drive storage to all the students and faculty members.\nWe can leverage this opportunity to archive our group research data.\n\n\n\n\n\n\nSource vs Data\n\n\n\nFor source files, we use git mainly for version control purposes. Also, the source files are usually small in size, and github is sufficient for storage.\nFor data files, we use googledrive for archiving purposes. Also, the data files are usually large in size, and googledrive is perfect for this.\n\n\n\nGeneral principles\n\nFor each project, create a subfolder in the shared google drive.\nThe subfolder should have a concise but indicative name, for example, jtao-rotation1\nCreate sub-subfolders as necessary\nInclude a README file to briefly introduce the background of the data and the structure of the data; also in the README file, include a link to the git repo of the source files.\n…\n\n\n\nFor use with the cluster\n\nFollow the instructions from Research Computing to configure your rclone on agave and link rclone to the group shared google drive.\nInclude a line of rclone copy command in the batch file (as shown in the template), and follow the instructions to automate the archiving process immediately after your simulation is completed.\nIf you prefer to use GUI, you can use Globus.\n\n\n\nFor use outside of the cluster\n\nArchive early, archive often.\nFollow the general principles."
+  },
+  {
+    "objectID": "agave-template.html#a-template-chronogpu-project-to-run-on-agave",
+    "href": "agave-template.html#a-template-chronogpu-project-to-run-on-agave",
+    "title": "Using Agave",
+    "section": "A template ChronoGPU project to run on Agave",
+    "text": "GitHub repo: chgpu_agave_template\n\nTo test run the template project on Agave\n\n\n\n\n\n\nWarning\n\n\n\nIn order to use the google drive and git as instructed, you need to update your personal configure files for rclone and git on the cluster first.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf you prefer to use GUI tools for git operations, neglect the corresponding command line instructions below and go ahead and use the GUI tools you are familiar with. Do note that using the command line could potentially streamline your workflow and improve your efficiency further.\n\n\n\nLogon to the Agave cluster\n\nssh your.username@asu.agave.edu\n\nNavigate to your workspace\nFor example,\n\ncd Workspace/Chrono\n\nYour working directory may be different from mine. It is recommended to have a directory called something like “Workspace” in your home directory to host all your projects\n\n\nClone this repo\n\ngit clone https://github.com/JulianTao/chgpu_agave_template.git\n\nNavigate to the new directory\n\ncd chgpu_agave_template\n\nExamine the directory structure\n\nls -al\nIt includes:\n\na CMakeList.txt\na bash file to be run by sbatch\na .gitignore file to ignore the output and log files for git operations\nsource files\n\nrepose.cpp\nGpuDemoUtils.hpp\nrepose.json\n\n\n\nEdit repose.sh if needed, following the instructions inside\nRun the bash file\n\nsbatch repose.sh\n\nExamine the OUTPUT directory and the log files .err and .out.\nExamine the shared google drive, there should be a new folder data folder with the name specified in the bash script.\n\n\n\nTo create your own project based on the template\n\n\n\n\n\n\nWarning\n\n\n\nIn order to use git as instructed below, you need to configure git first on your computer.\n\n\n\nOn GitHub, navigate to the main page of the repository. chgpu_agave_template\nAbove the file list, click Use this template, which usually appears in green.\nType a name for your repository, and an optional description. The project name should be concise but indicative, e.g., “sample_prep”. For a more comprehensive instruction on how to create a repo from a template, check here\n\n\n\n\n\n\n\nNote\n\n\n\nInstead of using “template”, you can also “fork” the repo and then update the settings such as repo name etc. There are some differences though, as discussed here\n\n\n\nOn your own computer, clone the new repo.\nRename the cpp,json, sh files with your project name. For example, repose.cpp –> sample_prep.cpp; repose.json –> sample_prep.json; and repose.sh –> sample_prep.json\nEdit the source cpp and json files for your project.\nUpdate the CMakeList.txt file:\nReplace the word repose with your project name.\nFor example, change\n\nset(MY_PROJECT repose)\nto\nset(MY_PROJECT sample_prep)\n\nUpdate the repose.sh file\n\n\nSearch and replace all instances of repose with your project name, e.g., sample_prep\nUpdate the slurm requests as shown in the example bash script.\n\n\nCommit the changes and push to the github repo.\n\ngit add --all\ngit commit -m 'update to sample_prep'\ngit push\n\nRepeat the steps the same as in the “test run” example above, except that you work on the new project repo.\nCongratulations, you run your first ChronoGPU project on Agave."
+  },
+  {
     "objectID": "knowledge.html#managing-literature-using-zotoro",
     "href": "knowledge.html#managing-literature-using-zotoro",
     "title": "Knowledge Management",
@@ -56,11 +77,18 @@
     "text": ""
   },
   {
-    "objectID": "gd.html#google-drive",
-    "href": "gd.html#google-drive",
-    "title": "Data Archiving",
-    "section": "Google Drive",
-    "text": "ASU provides unlimited google drive storage to all the students and faculty members.\nWe can leverage this opportunity to archive our group research data.\n\n\n\n\n\n\nSource vs Data\n\n\n\nFor source files, we use git mainly for version control purposes. Also, the source files are usually small in size, and github is sufficient for storage.\nFor data files, we use googledrive for archiving purposes. Also, the data files are usually large in size, and googledrive is perfect for this.\n\n\n\nGeneral principles\n\nFor each project, create a subfolder in the shared google drive.\nThe subfolder should have a concise but indicative name, for example, jtao-rotation1\nCreate sub-subfolders as necessary\nInclude a README file to briefly introduce the background of the data and the structure of the data; also in the README file, include a link to the git repo of the source files.\n…\n\n\n\nFor use with the cluster\n\nFollow the instructions from Research Computing to configure your rclone on agave and link rclone to the group shared google drive.\nInclude a line of rclone copy command in the batch file (as shown in the template), and follow the instructions to automate the archiving process immediately after your simulation is completed.\nIf you prefer to use GUI, you can use Globus.\n\n\n\nFor use outside of the cluster\n\nArchive early, archive often.\nFollow the general principles."
+    "objectID": "documentation.html#rmarkdown",
+    "href": "documentation.html#rmarkdown",
+    "title": "Documentation",
+    "section": "Rmarkdown",
+    "text": "Rmarkdown Cookbook\nBiG Rmarkdown Templates"
+  },
+  {
+    "objectID": "documentation.html#quarto",
+    "href": "documentation.html#quarto",
+    "title": "Documentation",
+    "section": "Quarto",
+    "text": "Quarto Documentation"
   },
   {
     "objectID": "lab.html#standard-operation-procedures",
@@ -75,33 +103,5 @@
     "title": "Labwork and Management",
     "section": "Inventory",
     "text": ""
-  },
-  {
-    "objectID": "agave-template.html#a-template-chronogpu-project-to-run-on-agave",
-    "href": "agave-template.html#a-template-chronogpu-project-to-run-on-agave",
-    "title": "Using Agave",
-    "section": "A template ChronoGPU project to run on Agave",
-    "text": "GitHub repo: chgpu_agave_template\n\nTo test run the template project on Agave\n\n\n\n\n\n\nWarning\n\n\n\nIn order to use the google drive and git as instructed, you need to update your personal configure files for rclone and git on the cluster first.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf you prefer to use GUI tools for git operations, neglect the corresponding command line instructions below and go ahead and use the GUI tools you are familiar with. Do note that using the command line could potentially streamline your workflow and improve your efficiency further.\n\n\n\nLogon to the Agave cluster\n\nssh your.username@asu.agave.edu\n\nNavigate to your workspace\nFor example,\n\ncd Workspace/Chrono\n\nYour working directory may be different from mine. It is recommended to have a directory called something like “Workspace” in your home directory to host all your projects\n\n\nClone this repo\n\ngit clone https://github.com/JulianTao/chgpu_agave_template.git\n\nNavigate to the new directory\n\ncd chgpu_agave_template\n\nExamine the directory structure\n\nls -al\nIt includes:\n\na CMakeList.txt\na bash file to be run by sbatch\na .gitignore file to ignore the output and log files for git operations\nsource files\n\nrepose.cpp\nGpuDemoUtils.hpp\nrepose.json\n\n\n\nEdit repose.sh if needed, following the instructions inside\nRun the bash file\n\nsbatch repose.sh\n\nExamine the OUTPUT directory and the log files .err and .out.\nExamine the shared google drive, there should be a new folder data folder with the name specified in the bash script.\n\n\n\nTo create your own project based on the template\n\n\n\n\n\n\nWarning\n\n\n\nIn order to use git as instructed below, you need to configure git first on your computer.\n\n\n\nOn GitHub, navigate to the main page of the repository. chgpu_agave_template\nAbove the file list, click Use this template, which usually appears in green.\nType a name for your repository, and an optional description. The project name should be concise but indicative, e.g., “sample_prep”. For a more comprehensive instruction on how to create a repo from a template, check here\n\n\n\n\n\n\n\nNote\n\n\n\nInstead of using “template”, you can also “fork” the repo and then update the settings such as repo name etc. There are some differences though, as discussed here\n\n\n\nOn your own computer, clone the new repo.\nRename the cpp,json, sh files with your project name. For example, repose.cpp –> sample_prep.cpp; repose.json –> sample_prep.json; and repose.sh –> sample_prep.json\nEdit the source cpp and json files for your project.\nUpdate the CMakeList.txt file:\nReplace the word repose with your project name.\nFor example, change\n\nset(MY_PROJECT repose)\nto\nset(MY_PROJECT sample_prep)\n\nUpdate the repose.sh file\n\n\nSearch and replace all instances of repose with your project name, e.g., sample_prep\nUpdate the slurm requests as shown in the example bash script.\n\n\nCommit the changes and push to the github repo.\n\ngit add --all\ngit commit -m 'update to sample_prep'\ngit push\n\nRepeat the steps the same as in the “test run” example above, except that you work on the new project repo.\nCongratulations, you run your first ChronoGPU project on Agave."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workflow for the BiG group",
-    "section": "",
-    "text": "Note\n\n\n\nThis is a work in progress. Suggestions and contributions are welcome! Please open an issue if you have questions, open a PR if you think your branch is ready to be merged.\n\n\n\nSource Version Control\nData Archiving\nDocumentation\nKnowledge Mangement\nLab Management\nUsing Agave\n\nRC documentation\nUsing Template Project"
-  },
-  {
-    "objectID": "documentation.html#rmarkdown",
-    "href": "documentation.html#rmarkdown",
-    "title": "Documentation",
-    "section": "Rmarkdown",
-    "text": "Rmarkdown Cookbook\nBiG Rmarkdown Templates"
-  },
-  {
-    "objectID": "documentation.html#quarto",
-    "href": "documentation.html#quarto",
-    "title": "Documentation",
-    "section": "Quarto",
-    "text": "Quarto Documentation"
   }
 ]
