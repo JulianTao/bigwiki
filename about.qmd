@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-Suggested workflow for the BiG research group.
+Resources and suggested workflow for the BiG research group.

@@ -164,7 +164,7 @@ git remote remove <shortname>               # remote the remote <shorname>
 
   * There are many git workflows. To start, let's use the simple [**Github Workflow**](https://guides.github.com/introduction/flow/).
 
-![Github Flow](./media/Github_flow.png)
+![Github Flow](./img/Github_flow.png)
 
 
   * Another popular one is the [**git-flow**](https://nvie.com/posts/a-successful-git-branching-model)

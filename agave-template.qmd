@@ -8,7 +8,7 @@ title: Using Agave
 ### To test run the template project on Agave
 
 :::{.callout-warning}
-In order to use the google drive and git as instructed, you need to update your personal configure files for [`rclone`](./rclone-gd.qmd) and [`git`](./git.qmd) on the **cluster**  first. 
+In order to use the google drive and git as instructed, you need to update your personal configure files for [`rclone`](gd.qmd) and [`git`](./git.qmd) on the **cluster**  first. 
 :::
 
 :::{.callout-note}

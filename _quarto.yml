@@ -3,10 +3,8 @@ project:
   output-dir: docs
 
 website:
-  title: "BiG Workflow"
+  title: "BiG Wiki"
   navbar:
-    type: dark
-    background: gold
     left:
       - href: index.qmd
         text: Home
@@ -15,7 +13,7 @@ website:
       - icon: github
         href: https://github.com/JulianTao/bigworkflow
   sidebar:
-    style: "docked"
+    style: "floating"
     search: true
     contents:
       - git.qmd
@@ -27,7 +25,6 @@ website:
 format:
   html:
     theme: cosmo
-    linkcolor: maroon
     highlight-style: github
-    css: styles.css
+    css: assets/styles.css
     toc: true
