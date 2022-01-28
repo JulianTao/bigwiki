@@ -160,32 +160,44 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-  <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-1">
-      <li class="sidebar-item">
-  <a href="./git.html" class="">Version control</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./gd.html" class="">Data Archiving</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./documentation.html" class="">Documentation</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./knowledge.html" class="">Knowledge Management</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./lab.html" class="">Labwork and Management</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./agave-template.html" class="active">Using Agave</a>
-</li>
-  </ul>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git.html" class="sidebar-item-text ">Version control</a>
   </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gd.html" class="sidebar-item-text ">Data Archiving</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documentation.html" class="sidebar-item-text ">Documentation</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./knowledge.html" class="sidebar-item-text ">Knowledge Management</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab.html" class="sidebar-item-text ">Labwork and Management</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agave-template.html" class="sidebar-item-text active">Using Agave</a>
+  </div>
+</li>
+    </ul>
+    </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-      <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#a-template-chronogpu-project-to-run-on-agave" class="nav-link active" data-scroll-target="#a-template-chronogpu-project-to-run-on-agave">A template ChronoGPU project to run on Agave</a>
@@ -264,16 +276,16 @@ Note
 <li>a .gitignore file to ignore the output and log files for git operations</li>
 <li>source files
 <ul>
-<li>repose.cpp</li>
+<li>mychgpu.cpp</li>
 <li>GpuDemoUtils.hpp</li>
-<li>repose.json</li>
+<li>mychgpu.json</li>
 </ul></li>
 </ul>
 <ol start="6" type="1">
-<li><p>Edit <code>repose.sh</code> if needed, following the instructions inside</p></li>
+<li><p>Edit <code>mychgpu.sh</code> if needed, following the instructions inside</p></li>
 <li><p>Run the bash file</p></li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> repose.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> mychgpu.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="8" type="1">
 <li>Examine the <code>OUTPUT</code> directory and the log files <code>.err</code> and <code>.out</code>.</li>
 <li>Examine the shared google drive, there should be a new folder data folder with the name specified in the bash script.</li>
@@ -314,20 +326,20 @@ Note
 </div>
 <ol start="6" type="1">
 <li><p><strong>On your own computer</strong>, clone the new repo.</p></li>
-<li><p>Rename the <code>cpp</code>,<code>json</code>, <code>sh</code> files with your project name. For example, <code>repose.cpp</code> –&gt; <code>sample_prep.cpp</code>; <code>repose.json</code> –&gt; <code>sample_prep.json</code>; and <code>repose.sh</code> –&gt; <code>sample_prep.json</code></p></li>
+<li><p>Rename the <code>cpp</code>,<code>json</code>, <code>sh</code> files with your project name. For example, <code>mychgpu.cpp</code> –&gt; <code>sample_prep.cpp</code>; <code>mychgpu.json</code> –&gt; <code>sample_prep.json</code>; and <code>mychgpu.sh</code> –&gt; <code>sample_prep.json</code></p></li>
 <li><p>Edit the source <code>cpp</code> and <code>json</code> files for your project.</p></li>
 <li><p>Update the <code>CMakeList.txt</code> file:</p>
-<p>Replace the word <code>repose</code> with your project name.</p>
+<p>Replace the word <code>mychgpu</code> with your project name.</p>
 <p>For example, change</p></li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cmake code-with-copy"><code class="sourceCode cmake"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(MY_PROJECT repose)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cmake code-with-copy"><code class="sourceCode cmake"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(MY_PROJECT mychgpu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>to</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode cmake code-with-copy"><code class="sourceCode cmake"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(MY_PROJECT sample_prep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="7" type="1">
-<li>Update the <code>repose.sh</code> file</li>
+<li>Update the <code>mychgpu.sh</code> file</li>
 </ol>
 <ul>
-<li>Search and replace all instances of <code>repose</code> with your project name, e.g., <code>sample_prep</code></li>
+<li>Search and replace all instances of <code>mychgpu</code> with your project name, e.g., <code>sample_prep</code></li>
 <li>Update the slurm requests as shown in the example bash script.</li>
 </ul>
 <ol start="8" type="1">
